@@ -4,6 +4,7 @@ public class Game : MonoBehaviour {
   // set in inspector
   public float enemySpawnDelay;
   public GameObject enemyPrefab;
+  public GameObject enemy2Prefab;
   public GameObject powerupPrefab;
   public BoxCollider2D spawnRange;
 
@@ -24,7 +25,14 @@ public class Game : MonoBehaviour {
         0);
     Instantiate(enemyPrefab, enemySpawnPt, Quaternion.identity);
   }
-  private void SpawnPowerup() {
+   private void SpawnEnemy2(){
+        Vector3 enemySpawnPt = new Vector3(
+            Random.Range(spawnRange.bounds.min.x, spawnRange.bounds.max.x),
+            Random.Range(spawnRange.bounds.min.y, spawnRange.bounds.max.y),
+            0);
+        Instantiate(enemy2Prefab, enemySpawnPt, Quaternion.identity);
+   }
+   private void SpawnPowerup() {
     Vector3 powerupSpawnPt = new Vector3(
         Random.Range(spawnRange.bounds.min.x, spawnRange.bounds.max.x),
         Random.Range(spawnRange.bounds.min.y, spawnRange.bounds.max.y),
@@ -36,6 +44,12 @@ public class Game : MonoBehaviour {
     enemySpawnTimer += Time.deltaTime;
     if (enemySpawnTimer >= enemySpawnDelay) {
       SpawnEnemy();
+      enemySpawnTimer = 0.0f;
+    }
+
+    enemySpawnTimer += Time.deltaTime;
+    if (enemySpawnTimer >= enemySpawnDelay) {
+      SpawnEnemy2();
       enemySpawnTimer = 0.0f;
     }
 

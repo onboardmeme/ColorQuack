@@ -1441,6 +1441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Game
   enemySpawnDelay: 3
   enemyPrefab: {fileID: 3409777995842195204, guid: 992015109d2204d5c9a3ef2da01e8542, type: 3}
+  enemy2Prefab: {fileID: 3409777995842195204, guid: cbc1c66a53e1dc4499853bbf61776b5a, type: 3}
   powerupPrefab: {fileID: 7665686937186703866, guid: 07f2ea3b03915449aa7e57f1e6305b14, type: 3}
   spawnRange: {fileID: 1681509736}
 --- !u!4 &554489001
