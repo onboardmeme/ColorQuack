@@ -18,5 +18,9 @@ public class Enemy : MonoBehaviour {
       Destroy(gameObject);
       c.gameObject.GetComponent<Player>().DamageFromEnemy();
     }
+    else if (c.gameObject.CompareTag("Despawn"))
+    {
+      Destroy(gameObject);
+    }
   }
 }

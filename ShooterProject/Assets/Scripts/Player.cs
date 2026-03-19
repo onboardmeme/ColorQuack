@@ -8,23 +8,36 @@ public class Player : MonoBehaviour {
   public Transform bulletSpawnPoint;
   public Slider sliderHealth;
   public Shield shield;
+  public float maxBulletCooldown;
 
   // private fields
   private float health;
   private const float Y_LIMIT = 4.6f;
+    private float BulletCooldown;
 
   private void Start() {
     health = 1.0f;
+    BulletCooldown = maxBulletCooldown;
   }
 
   private void Update() {
     sliderHealth.value = health;
 
     if (SpaceShooterInput.Instance.input.Fire.WasPressedThisFrame()) {
-      GameObject bulletObj = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+            if (BulletCooldown >= maxBulletCooldown)
+            {
+                GameObject bulletObj = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+                BulletCooldown = 0;
+            }
+            
     }
+    else
+        {
+            BulletCooldown += Time.deltaTime;
+            BulletCooldown = Mathf.Clamp(BulletCooldown, 0, maxBulletCooldown);
+        }
 
-    var vertMove = SpaceShooterInput.Instance.input.MoveVertically.ReadValue<float>();
+            var vertMove = SpaceShooterInput.Instance.input.MoveVertically.ReadValue<float>();
     this.transform.Translate(Vector3.up * speed * Time.deltaTime * vertMove);
 
     if (this.transform.position.y > Y_LIMIT) {
