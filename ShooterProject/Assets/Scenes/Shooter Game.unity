@@ -2293,7 +2293,7 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 101424959}
   sliderHealth: {fileID: 73900209}
   shield: {fileID: 240335427}
-  maxBulletCooldown: 0.3
+  maxBulletCooldown: 0.5
 --- !u!58 &786289105
 CircleCollider2D:
   m_ObjectHideFlags: 0

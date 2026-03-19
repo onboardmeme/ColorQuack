@@ -118,6 +118,15 @@ public partial class @SpaceShooterInputActions: IInputActionCollection2, IDispos
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SuperFire"",
+                    ""type"": ""Button"",
+                    ""id"": ""3add8cd2-71c9-4961-abba-2964e6458b9c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -208,6 +217,17 @@ public partial class @SpaceShooterInputActions: IInputActionCollection2, IDispos
                     ""action"": ""Shield"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ffcddaab-aa6f-47b1-a80a-31f055a6ae85"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SuperFire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -219,6 +239,7 @@ public partial class @SpaceShooterInputActions: IInputActionCollection2, IDispos
         m_Standard_Fire = m_Standard.FindAction("Fire", throwIfNotFound: true);
         m_Standard_MoveVertically = m_Standard.FindAction("MoveVertically", throwIfNotFound: true);
         m_Standard_Shield = m_Standard.FindAction("Shield", throwIfNotFound: true);
+        m_Standard_SuperFire = m_Standard.FindAction("SuperFire", throwIfNotFound: true);
     }
 
     ~@SpaceShooterInputActions()
@@ -302,6 +323,7 @@ public partial class @SpaceShooterInputActions: IInputActionCollection2, IDispos
     private readonly InputAction m_Standard_Fire;
     private readonly InputAction m_Standard_MoveVertically;
     private readonly InputAction m_Standard_Shield;
+    private readonly InputAction m_Standard_SuperFire;
     /// <summary>
     /// Provides access to input actions defined in input action map "Standard".
     /// </summary>
@@ -325,6 +347,10 @@ public partial class @SpaceShooterInputActions: IInputActionCollection2, IDispos
         /// Provides access to the underlying input action "Standard/Shield".
         /// </summary>
         public InputAction @Shield => m_Wrapper.m_Standard_Shield;
+        /// <summary>
+        /// Provides access to the underlying input action "Standard/SuperFire".
+        /// </summary>
+        public InputAction @SuperFire => m_Wrapper.m_Standard_SuperFire;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -360,6 +386,9 @@ public partial class @SpaceShooterInputActions: IInputActionCollection2, IDispos
             @Shield.started += instance.OnShield;
             @Shield.performed += instance.OnShield;
             @Shield.canceled += instance.OnShield;
+            @SuperFire.started += instance.OnSuperFire;
+            @SuperFire.performed += instance.OnSuperFire;
+            @SuperFire.canceled += instance.OnSuperFire;
         }
 
         /// <summary>
@@ -380,6 +409,9 @@ public partial class @SpaceShooterInputActions: IInputActionCollection2, IDispos
             @Shield.started -= instance.OnShield;
             @Shield.performed -= instance.OnShield;
             @Shield.canceled -= instance.OnShield;
+            @SuperFire.started -= instance.OnSuperFire;
+            @SuperFire.performed -= instance.OnSuperFire;
+            @SuperFire.canceled -= instance.OnSuperFire;
         }
 
         /// <summary>
@@ -441,5 +473,12 @@ public partial class @SpaceShooterInputActions: IInputActionCollection2, IDispos
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnShield(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SuperFire" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSuperFire(InputAction.CallbackContext context);
     }
 }

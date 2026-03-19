@@ -36,8 +36,25 @@ public class Player : MonoBehaviour {
             BulletCooldown += Time.deltaTime;
             BulletCooldown = Mathf.Clamp(BulletCooldown, 0, maxBulletCooldown);
         }
+        if (SpaceShooterInput.Instance.input.SuperFire.WasPressedThisFrame())
+        {
+            if (BulletCooldown >= maxBulletCooldown)
+            {
+                GameObject bulletObj = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+                bulletObj.GetComponent<Bullet>().speed *= 2;
+                Instantiate(bulletPrefab, bulletSpawnPoint.position + Vector3.up * 0.5f, Quaternion.identity);
+                Instantiate(bulletPrefab, bulletSpawnPoint.position + Vector3.up * -0.5f, Quaternion.identity);
+                BulletCooldown = 0;
+            }
 
-            var vertMove = SpaceShooterInput.Instance.input.MoveVertically.ReadValue<float>();
+        }
+        else
+        {
+            BulletCooldown += Time.deltaTime;
+            BulletCooldown = Mathf.Clamp(BulletCooldown, 0, maxBulletCooldown);
+        }
+
+        var vertMove = SpaceShooterInput.Instance.input.MoveVertically.ReadValue<float>();
     this.transform.Translate(Vector3.up * speed * Time.deltaTime * vertMove);
 
     if (this.transform.position.y > Y_LIMIT) {
