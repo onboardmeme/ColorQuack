@@ -20,6 +20,8 @@ public class EnemyB : MonoBehaviour {
         }
         else if (c.gameObject.CompareTag("Player"))
         {
+            var expoObj = Instantiate(expoPrefab, transform.position, Quaternion.identity);
+            Destroy(expoObj, expoObj.GetComponent<ParticleSystem>().main.duration);
             Destroy(gameObject);
             c.gameObject.GetComponent<Player>().DamageFromEnemy();
         }
