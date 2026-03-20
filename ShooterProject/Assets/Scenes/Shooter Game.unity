@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 195735970}
   - component: {fileID: 195735971}
   m_Layer: 3
-  m_Name: Triangle
+  m_Name: Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 210355479}
   - component: {fileID: 210355480}
   m_Layer: 3
-  m_Name: Triangle (1)
+  m_Name: Ship_Inside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2715,7 +2715,7 @@ GameObject:
   - component: {fileID: 749500692}
   - component: {fileID: 749500693}
   m_Layer: 3
-  m_Name: Triangle (2)
+  m_Name: Ship_Outside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2786,7 +2786,7 @@ SpriteRenderer:
   m_SortingOrder: 7
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.6933962, g: 0.9999999, b: 1, a: 1}
+  m_Color: {r: 0.69411767, g: 0.9999999, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2907,10 +2907,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1043086989}
   - {fileID: 195735970}
   - {fileID: 101424959}
   - {fileID: 158793457}
-  - {fileID: 1043086989}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &786289104
@@ -3635,7 +3635,7 @@ GameObject:
   - component: {fileID: 1043086989}
   - component: {fileID: 1043086990}
   m_Layer: 3
-  m_Name: Triangle (3)
+  m_Name: Ship_Blast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3650,8 +3650,8 @@ Transform:
   m_GameObject: {fileID: 1043086988}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7045414, y: 0.7096629, z: -0, w: 0}
-  m_LocalPosition: {x: -0.69, y: 0.05, z: 0}
-  m_LocalScale: {x: 0.29725912, y: 0.6258489, z: 0.65903425}
+  m_LocalPosition: {x: -0.672, y: 0.039, z: 0}
+  m_LocalScale: {x: 0.19485618, y: 0.5833343, z: 0.43200323}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 786289103}
@@ -3706,7 +3706,7 @@ SpriteRenderer:
   m_SortingOrder: 6
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.41037738, g: 0.92138374, b: 1, a: 1}
+  m_Color: {r: 0.69411767, g: 0.9960785, b: 0.9960785, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
