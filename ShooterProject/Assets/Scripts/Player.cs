@@ -11,15 +11,21 @@ public class Player : MonoBehaviour {
   public float maxBulletCooldown;
   public GameObject expoPrefab;
   public UI ui;
+    public AudioClip clipNormalFire;
+    public AudioClip clipSuperFire;
+    public AudioClip clipHurt;
+    public AudioClip clipPowerup;
 
-  // private fields
-  private float health;
+    // private fields
+    private float health;
   private const float Y_LIMIT = 4.6f;
     private float BulletCooldown;
+    private AudioSource audiosrc;
 
   private void Start() {
     health = 1.0f;
     BulletCooldown = maxBulletCooldown;
+        audiosrc = GetComponent<AudioSource>();
   }
 
   private void Update() {
@@ -30,6 +36,8 @@ public class Player : MonoBehaviour {
             {
                 GameObject bulletObj = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
                 BulletCooldown = 0;
+                audiosrc.clip = clipNormalFire;
+                audiosrc.Play();
             }
             
     }
@@ -47,6 +55,8 @@ public class Player : MonoBehaviour {
                 Instantiate(bulletPrefab, bulletSpawnPoint.position + Vector3.up * 0.5f, Quaternion.identity);
                 Instantiate(bulletPrefab, bulletSpawnPoint.position + Vector3.up * -0.5f, Quaternion.identity);
                 BulletCooldown = 0;
+                audiosrc.clip = clipSuperFire;
+                audiosrc.Play();
             }
 
         }
@@ -70,15 +80,21 @@ public class Player : MonoBehaviour {
   public void DamageFromEnemy() {
     if (!shield.IsActive) {
       health -= 0.25f;
+      audiosrc.clip = clipHurt;
+      audiosrc.Play();
             if (health <= 0)
             {
                 var expoObj = Instantiate(expoPrefab, transform.position, Quaternion.identity);
                 Destroy(expoObj, expoObj.GetComponent<ParticleSystem>().main.duration);
+                ui.ShowGameOver();
+
             }
     }
   }
 
   public void RefillShield() {
-    shield.FullRefill();
+        audiosrc.clip = clipPowerup;
+        audiosrc.Play();
+        shield.FullRefill();
   }
 }
