@@ -10,32 +10,37 @@ public class Player : MonoBehaviour {
   public Shield shield;
   public float maxBulletCooldown;
   public float maxSuperCooldown;
+  public float maxSuperMeter;
   public GameObject expoPrefab;
   public UI ui;
-    public GameObject SuperBulletPrefab;
-    public AudioClip clipNormalFire;
-    public AudioClip clipSuperFire;
-    public AudioClip clipHurt;
-    public AudioClip clipPowerup;
+  public GameObject SuperBulletPrefab;
+  public AudioClip clipNormalFire;
+  public AudioClip clipSuperFire;
+  public AudioClip clipHurt;
+  public AudioClip clipPowerup;
+  public Slider sliderSuper;
 
     // private fields
     private float health;
   private const float Y_LIMIT = 4.6f;
     private float BulletCooldown;
     private float SuperCooldown;
+    private float SuperMeter;
     private AudioSource audiosrc;
 
   private void Start() {
     health = 1.0f;
-    BulletCooldown = maxBulletCooldown;
+        SuperMeter = 0f;
+        BulletCooldown = maxBulletCooldown;
     SuperCooldown = maxSuperCooldown;
         audiosrc = GetComponent<AudioSource>();
   }
 
   private void Update() {
     sliderHealth.value = health;
+    sliderSuper.value = Mathf.Clamp(SuperMeter / maxSuperMeter, 0f, 1f);
 
-    if (SpaceShooterInput.Instance.input.Fire.WasPressedThisFrame()) {
+        if (SpaceShooterInput.Instance.input.Fire.WasPressedThisFrame()) {
             if (BulletCooldown >= maxBulletCooldown)
             {
                 GameObject bulletObj = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
@@ -54,11 +59,15 @@ public class Player : MonoBehaviour {
         {
             if (SuperCooldown >= maxSuperCooldown)
             {
-                GameObject SuperObj = Instantiate(SuperBulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
-                SuperObj.GetComponent<Fire>().speed *= 2;
-                SuperCooldown = 0;
-                audiosrc.clip = clipSuperFire;
-                audiosrc.Play();
+                if (SuperMeter > 0)
+                {
+                    GameObject SuperObj = Instantiate(SuperBulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+                    SuperObj.GetComponent<Fire>().speed *= 2;
+                    SuperCooldown = 0;
+                    audiosrc.clip = clipSuperFire;
+                    audiosrc.Play();
+                    SuperMeter -= maxSuperMeter * 0.1f;
+                }
             }
 
         }
@@ -111,9 +120,10 @@ public class Player : MonoBehaviour {
         }
     }
 
-    public void RefillShield() {
+    public void RefillShield()
+    {
         audiosrc.clip = clipPowerup;
         audiosrc.Play();
-        shield.FullRefill();
-  }
+        SuperMeter = maxSuperMeter;
+    }
 }

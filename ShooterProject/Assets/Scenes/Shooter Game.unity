@@ -1015,7 +1015,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655b71fa7008ce742b98ac851db267c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shield
-  maxProtectionTime: 3
   shield: {fileID: 158793456}
 --- !u!1 &244133903
 GameObject:
@@ -2594,7 +2593,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SHIELD
+  m_text: ENERGY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3258,6 +3257,7 @@ MonoBehaviour:
   shield: {fileID: 240335427}
   maxBulletCooldown: 1
   maxSuperCooldown: 0.3
+  maxSuperMeter: 5
   expoPrefab: {fileID: 7909087763977901054, guid: ada1ff2438038a3439706ce6d019e1aa, type: 3}
   ui: {fileID: 1637983210}
   SuperBulletPrefab: {fileID: 707319000358931554, guid: 21476d61abedeec46ad4c614b8397855, type: 3}
@@ -3265,6 +3265,7 @@ MonoBehaviour:
   clipSuperFire: {fileID: 8300000, guid: e0e7779e23d46324d8af7c45ecc3ad64, type: 3}
   clipHurt: {fileID: 8300000, guid: e0e7779e23d46324d8af7c45ecc3ad64, type: 3}
   clipPowerup: {fileID: 8300000, guid: e0e7779e23d46324d8af7c45ecc3ad64, type: 3}
+  sliderSuper: {fileID: 240335426}
 --- !u!58 &786289105
 CircleCollider2D:
   m_ObjectHideFlags: 0
