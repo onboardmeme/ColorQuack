@@ -66,7 +66,7 @@ public class Player : MonoBehaviour {
                     SuperCooldown = 0;
                     audiosrc.clip = clipSuperFire;
                     audiosrc.Play();
-                    SuperMeter -= maxSuperMeter * 0.1f;
+                    SuperMeter -= maxSuperMeter * 0.25f;
                 }
             }
 
@@ -74,7 +74,7 @@ public class Player : MonoBehaviour {
         else
         {
             SuperCooldown += Time.deltaTime;
-            SuperCooldown = Mathf.Clamp(BulletCooldown, 0, maxBulletCooldown);
+            SuperCooldown = Mathf.Clamp(SuperCooldown, 0, maxSuperCooldown);
         }
 
         var vertMove = SpaceShooterInput.Instance.input.MoveVertically.ReadValue<float>();
@@ -98,6 +98,7 @@ public class Player : MonoBehaviour {
             {
                 var expoObj = Instantiate(expoPrefab, transform.position, Quaternion.identity);
                 Destroy(expoObj, expoObj.GetComponent<ParticleSystem>().main.duration);
+                Destroy(gameObject);
                 ui.ShowGameOver();
 
             }
@@ -114,6 +115,7 @@ public class Player : MonoBehaviour {
             {
                 var expoObj = Instantiate(expoPrefab, transform.position, Quaternion.identity);
                 Destroy(expoObj, expoObj.GetComponent<ParticleSystem>().main.duration);
+                Destroy(gameObject);
                 ui.ShowGameOver();
 
             }

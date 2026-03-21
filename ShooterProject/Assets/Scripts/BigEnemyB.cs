@@ -17,7 +17,8 @@ public class BigEnemyB : MonoBehaviour {
       Destroy(gameObject);
       Instantiate(enemyspawn, transform.position + Vector3.up * 0.5f, Quaternion.identity);
       Instantiate(enemyspawn, transform.position + Vector3.up * -0.5f, Quaternion.identity);
-        }
+      Score.Instance.HitEnemy();
+    }
     else if (c.gameObject.CompareTag("Player")) {
             var expoObj = Instantiate(expoPrefab, transform.position, Quaternion.identity);
             Destroy(expoObj, expoObj.GetComponent<ParticleSystem>().main.duration);
