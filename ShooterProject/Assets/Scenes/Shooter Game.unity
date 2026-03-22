@@ -2084,9 +2084,11 @@ MonoBehaviour:
   enemy2Prefab: {fileID: 3409777995842195204, guid: cbc1c66a53e1dc4499853bbf61776b5a, type: 3}
   enemy3Prefab: {fileID: 3409777995842195204, guid: 16ff4391bd545c14ba37269ba08fe941, type: 3}
   enemy4Prefab: {fileID: 3409777995842195204, guid: 49b8edd4dc3d273489174983fb682f2a, type: 3}
+  bossPrefab: {fileID: 1352936405913109956, guid: b852ef50a3d95b54bbe6df7b0a013a85, type: 3}
   powerupPrefab: {fileID: 7665686937186703866, guid: 07f2ea3b03915449aa7e57f1e6305b14, type: 3}
   spawnRange: {fileID: 1681509736}
   ui: {fileID: 0}
+  bossSpawnDelay: 180
 --- !u!4 &554489001
 Transform:
   m_ObjectHideFlags: 0

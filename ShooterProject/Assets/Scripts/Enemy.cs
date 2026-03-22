@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour {
                 Destroy(gameObject);
                 Score.Instance.HitEnemy();
             }
+
         }
         else if (c.gameObject.CompareTag("Player"))
         {

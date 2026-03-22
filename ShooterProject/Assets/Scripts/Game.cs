@@ -9,14 +9,17 @@ public class Game : MonoBehaviour {
   public GameObject enemy2Prefab;
   public GameObject enemy3Prefab;
     public GameObject enemy4Prefab;
+    public GameObject bossPrefab;
     public GameObject powerupPrefab;
   public BoxCollider2D spawnRange;
   public UI ui;
+    public float bossSpawnDelay;
 
   // private fields
   private float powerUpDelay;
   private float enemySpawnTimer;
   private float powerupSpawnTimer;
+    private float bossSpawnTimer;
 
   private void Start() {
     powerUpDelay = Random.Range(5f, 10f);
@@ -60,6 +63,13 @@ public class Game : MonoBehaviour {
         0);
     Instantiate(powerupPrefab, powerupSpawnPt, Quaternion.identity);
   }
+    private void SpawnBoss()
+    {
+        Vector3 bossSpawnPt = new Vector3(
+            Random.Range(spawnRange.bounds.min.x, spawnRange.bounds.max.x), 0, 0
+            );
+        Instantiate(bossPrefab, bossSpawnPt, Quaternion.identity);
+    }
   void Update() {
     // check spawn enemy
     // if (!ui.IsReady) return;
