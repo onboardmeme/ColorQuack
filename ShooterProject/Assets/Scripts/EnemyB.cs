@@ -40,7 +40,18 @@ public class EnemyB : MonoBehaviour {
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Despawn"))
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            health -= bulletDamage;
+            if (health <= 0)
+            {
+                var expoObj = Instantiate(expoPrefab, transform.position, Quaternion.identity);
+                Destroy(expoObj, expoObj.GetComponent<ParticleSystem>().main.duration);
+                Destroy(gameObject);
+                Score.Instance.HitEnemy();
+            }
+        }
+            if (collision.CompareTag("Despawn"))
         {
             Destroy(gameObject);
         }

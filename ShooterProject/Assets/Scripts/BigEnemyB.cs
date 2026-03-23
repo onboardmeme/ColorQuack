@@ -40,6 +40,18 @@ public class BigEnemyB : MonoBehaviour {
   }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            health -= bulletDamage;
+            if (health <= 0)
+            {
+                var expoObj = Instantiate(expoPrefab, transform.position, Quaternion.identity);
+                Destroy(expoObj, expoObj.GetComponent<ParticleSystem>().main.duration);
+                Destroy(gameObject);
+                Instantiate(enemyspawn, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+                Instantiate(enemyspawn, transform.position + Vector3.up * -0.5f, Quaternion.identity);
+            }
+        }
         if (collision.CompareTag("Despawn"))
         {
             Destroy(gameObject);

@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868b81273c3980e43abe1b6d674732ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BigEnemyB
-  speed: 3
+  speed: 5
   expoPrefab: {fileID: 7909087763977901054, guid: ada1ff2438038a3439706ce6d019e1aa, type: 3}
   enemyspawn: {fileID: 3409777995842195204, guid: 992015109d2204d5c9a3ef2da01e8542, type: 3}
   bulletDamage: 1
