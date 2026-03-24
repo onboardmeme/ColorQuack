@@ -1,6 +1,4 @@
-# SpaceShooter2026
+# Color Shooter
 
-
-
-testing testing 123
-
+WASD or arrow keys for movement
+Shift for Super Shot
