@@ -3160,10 +3160,10 @@ MonoBehaviour:
   expoPrefab: {fileID: 7909087763977901054, guid: ada1ff2438038a3439706ce6d019e1aa, type: 3}
   ui: {fileID: 1637983210}
   SuperBulletPrefab: {fileID: 707319000358931554, guid: 21476d61abedeec46ad4c614b8397855, type: 3}
-  clipNormalFire: {fileID: 8300000, guid: e0e7779e23d46324d8af7c45ecc3ad64, type: 3}
-  clipSuperFire: {fileID: 8300000, guid: e0e7779e23d46324d8af7c45ecc3ad64, type: 3}
-  clipHurt: {fileID: 8300000, guid: e0e7779e23d46324d8af7c45ecc3ad64, type: 3}
-  clipPowerup: {fileID: 8300000, guid: e0e7779e23d46324d8af7c45ecc3ad64, type: 3}
+  clipNormalFire: {fileID: 8300000, guid: 5dbe353b7e01e104b91f9015dcfd1918, type: 3}
+  clipSuperFire: {fileID: 8300000, guid: a10258958a4ee2647860cb30b5b4a65d, type: 3}
+  clipHurt: {fileID: 8300000, guid: d13c3bcc60b9d6b4eb8d3d52a70b15db, type: 3}
+  clipPowerup: {fileID: 8300000, guid: 30a829c0161c3984084dcc795ac2f683, type: 3}
   sliderSuper: {fileID: 240335426}
 --- !u!58 &786289105
 CircleCollider2D:
@@ -3212,7 +3212,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: e0e7779e23d46324d8af7c45ecc3ad64, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
