@@ -2166,7 +2166,7 @@ MonoBehaviour:
   powerupPrefab: {fileID: 7665686937186703866, guid: 07f2ea3b03915449aa7e57f1e6305b14, type: 3}
   spawnRange: {fileID: 1681509736}
   ui: {fileID: 1637983210}
-  bossSpawnDelay: 180
+  bossSpawnDelay: 80
 --- !u!4 &554489001
 Transform:
   m_ObjectHideFlags: 0
@@ -3374,7 +3374,7 @@ MonoBehaviour:
   sliderHealth: {fileID: 73900209}
   shield: {fileID: 240335427}
   maxBulletCooldown: 0.3
-  maxSuperCooldown: 0.3
+  maxSuperCooldown: 0
   maxSuperMeter: 1
   expoPrefab: {fileID: 7909087763977901054, guid: ada1ff2438038a3439706ce6d019e1aa, type: 3}
   ui: {fileID: 1637983210}
