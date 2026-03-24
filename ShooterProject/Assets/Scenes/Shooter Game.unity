@@ -2447,7 +2447,7 @@ GameObject:
   - component: {fileID: 687996283}
   - component: {fileID: 687996282}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2525,6 +2525,8 @@ MonoBehaviour:
     Item Pickup - Sci-Fi Charge,
     Freesound Community
 
+    Music - Battle of the Holy Midi 4, KHInsider
+
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2591,7 +2593,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -804.5144, w: 0}
+  m_margin: {x: 0, y: 0, z: -804.5144, w: -543.6454}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -5334,7 +5336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1292325157
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5934,7 +5936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1526750697
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6947,7 +6949,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 162b7ff8ab3f52f4d85a2862494ef715, type: 3}
+  m_Resource: {fileID: 8300000, guid: 1739d4536df0673438858fb74c236d85, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
