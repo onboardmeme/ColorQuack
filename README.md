@@ -1,4 +1,6 @@
-# Color Shooter
+# Color Quack
 
-WASD or arrow keys for movement
-Shift for Super Shot
+WASD/Arrow Keys: Movement.
+Space: Shoot.
+Enter: Super Shot!
+Shift: Swap Resistances
